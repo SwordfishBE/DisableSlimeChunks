@@ -1,0 +1,33 @@
+{
+	"schemaVersion": 1,
+	"id": "disable_slime_chunks",
+	"version": "${version}",
+	"name": "Disable Slime Chunks",
+	"description": "Disables natural slime spawning in a chunk while a note block, slime block, and powered lever controller is active.",
+	"authors": [
+		"SwordfishBE"
+	],
+  "contact": {
+    "homepage": "https://github.com/SwordfishBE/DisableSlimeChunks",
+    "sources": "https://github.com/SwordfishBE/DisableSlimeChunks",
+    "issues": "https://github.com/SwordfishBE/DisableSlimeChunks/issues",
+    "email": "swordfishbe@locutus.net"
+  },
+	"license": "AGPL-3.0",
+	"icon": "assets/disable_slime_chunks/icon.jpg",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.disableslimechunks.DisableSlimeChunks"
+		]
+	},
+	"mixins": [
+		"disable_slime_chunks.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": ">=0.158.0"
+	}
+}

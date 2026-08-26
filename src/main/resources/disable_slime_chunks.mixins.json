@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "net.disableslimechunks.mixin",
+	"compatibilityLevel": "JAVA_25",
+	"mixins": [
+		"SlimeMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

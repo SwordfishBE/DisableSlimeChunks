@@ -3,6 +3,10 @@ plugins {
 	id 'maven-publish'
 }
 
+base {
+	archivesName = "disableslimechunks"
+}
+
 loom {
 	mods {
 		"disable_slime_chunks" {

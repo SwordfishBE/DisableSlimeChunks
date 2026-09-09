@@ -3,7 +3,8 @@
 	"package": "net.disableslimechunks.mixin",
 	"compatibilityLevel": "JAVA_25",
 	"mixins": [
-		"SlimeMixin"
+		"SlimeMixin",
+		"LevelChunkMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

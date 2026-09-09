@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Slime.class)
 abstract class SlimeMixin {
-	@Inject(method = "checkSlimeSpawnRules", at = @At("HEAD"), cancellable = true)
+	@Inject(method = "checkSlimeSpawnRules", at = @At("RETURN"), cancellable = true)
 	private static void disableSlimeSpawningInControlledChunks(
 			EntityType<Slime> entityType,
 			LevelAccessor level,
@@ -24,7 +24,7 @@ abstract class SlimeMixin {
 			RandomSource random,
 			CallbackInfoReturnable<Boolean> callback
 	) {
-		if (spawnReason == EntitySpawnReason.NATURAL
+		if (callback.getReturnValueZ() && spawnReason == EntitySpawnReason.NATURAL
 				&& level instanceof ServerLevel serverLevel
 				&& SlimeChunkController.disablesNaturalSlimeSpawning(serverLevel, pos)) {
 			callback.setReturnValue(false);

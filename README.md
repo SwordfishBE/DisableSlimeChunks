@@ -36,18 +36,24 @@ No configuration file is required.
 
 ## Requirements
 
-- Minecraft 26.2 or 26.3 (including 26.3-pre-1)
-- Fabric Loader 0.19.3 or newer
-- Fabric API matching your Minecraft version: 0.158.0+26.2 for 26.2, or 0.159.1+26.3 for 26.3 (or newer compatible versions)
+- Minecraft 26.2 or 26.3
+- Fabric Loader 0.19.3 or newer (0.19.5 used for the build)
+- Fabric API matching your Minecraft version: 0.158.0+26.2 for 26.2, or 0.160.5+26.3 for 26.3 (or newer compatible versions)
 - Java 25
 
 ## Version
 
-Current mod version: 1.0.3
+Current mod version: 1.0.5
 
-The same mod JAR supports both Minecraft versions. The default build targets Minecraft 26.2 for backward compatibility.
+The same mod JAR supports both Minecraft versions. The default build targets Minecraft 26.3.
 
 Controller checks run only after vanilla accepts a natural slime spawn. Results are cached per loaded chunk and invalidated when a lever, slime block, or note block changes. Searches stop at the first active controller and never load chunks. Cache entries are discarded with their chunks; lever changes take effect on the next spawn check.
+
+## Release notes
+
+Version 1.0.5 targets the final Minecraft 26.3 release with Fabric Loader 0.19.5 and Fabric API 0.160.5+26.3 while retaining 26.2 compatibility. The temporary ticker diagnostic source files have been removed. Remove the old diagnostic JVM option if it is still present.
+
+Build with `./gradlew build`. Release artifacts are written to `build/releases/1.0.5/libs/`.
 
 ## License
 

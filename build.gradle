@@ -7,6 +7,9 @@ base {
 	archivesName = "disableslimechunks"
 }
 
+// Isolate release outputs from older sandbox-owned build files.
+layout.buildDirectory = layout.projectDirectory.dir("build/releases/${project.version}")
+
 loom {
 	mods {
 		"disable_slime_chunks" {

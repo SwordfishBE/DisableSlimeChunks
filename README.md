@@ -1,8 +1,17 @@
-# Disable Slime Chunks
+# 💚 Disable Slime Chunks
 
-Disable Slime Chunks is a server-side Fabric mod that lets players control natural slime spawning in individual chunks using a simple structure made from vanilla blocks.
+[![GitHub Release](https://img.shields.io/github/v/release/SwordfishBE/DisableSlimeChunks?display_name=release&logo=github)](https://github.com/SwordfishBE/DisableSlimeChunks/releases)
+[![GitHub Downloads](https://img.shields.io/github/downloads/SwordfishBE/DisableSlimeChunks/total?logo=github)](https://github.com/SwordfishBE/DisableSlimeChunks/releases)
+[![Modrinth Downloads](https://img.shields.io/modrinth/dt/HlXmjZ8H?logo=modrinth&logoColor=white&label=Modrinth%20downloads)](https://modrinth.com/mod/disableslimechunks)
+[![CurseForge Downloads](https://img.shields.io/curseforge/dt/1711105?logo=curseforge&logoColor=white&label=CurseForge%20downloads)](https://www.curseforge.com/minecraft/mc-mods/disable-slime-chunks/)
 
-## How it works
+A slime chunk in the middle of your build? Stop covering every floor with carpet or string just to keep those pesky green visitors away. Place a note block, a slime block, and a powered lever to disable natural slime spawning in that chunk. Flip the lever off whenever you want the slimes back.
+
+Disable Slime Chunks is a server-side Fabric mod (also works in single player) that lets players control natural slime spawning in individual chunks using a simple structure made from vanilla blocks.
+
+---
+
+## ⁉️ How it works
 
 Build the following vertical structure anywhere inside the chunk you want to control, from bottom to top:
 
@@ -14,7 +23,9 @@ Switch the lever on to disable natural slime spawning throughout that chunk. Swi
 
 The lever must be floor-mounted on top of the slime block. A lever attached to the side of the slime block does not activate the controller.
 
-## Spawn types
+---
+
+## ✅ Spawn types
 
 The controller blocks naturally spawning slimes, including normal slime-chunk spawning. It does not block slimes created by:
 
@@ -25,36 +36,39 @@ The controller blocks naturally spawning slimes, including normal slime-chunk sp
 
 Existing slimes are not removed when a controller is activated.
 
-## Installation
-
-1. Install Fabric Loader for Minecraft 26.2 or 26.3.
-2. Install the matching Fabric API version.
-3. Place the Disable Slime Chunks JAR in the `mods` folder.
-4. Install the mod on the server. For singleplayer, install it in the client instance that hosts the world.
-
 No configuration file is required.
 
-## Requirements
+---
 
-- Minecraft 26.2 or 26.3
-- Fabric Loader 0.19.3 or newer (0.19.5 used for the build)
-- Fabric API matching your Minecraft version: 0.158.0+26.2 for 26.2, or 0.160.5+26.3 for 26.3 (or newer compatible versions)
-- Java 25
+## 📦 Installation
 
-## Version
+| Platform   | Link |
+|------------|------|
+| GitHub     | [Releases](https://github.com/SwordfishBE/DisableSlimeChunks/releases) |
+| Modrinth | [DisableSlimeChunks](https://modrinth.com/mod/disableslimechunks) |
+| CurseForge | [DisableSlimeChunks](https://www.curseforge.com/minecraft/mc-mods/disable-slime-chunks) |
 
-Current mod version: 1.0.5
 
-The same mod JAR supports both Minecraft versions. The default build targets Minecraft 26.3.
+1. Download the latest JAR from your preferred platform above.
+2. Place the JAR in your server's `mods/` folder.
+3. Make sure [Fabric API](https://modrinth.com/mod/fabric-api) is also installed.
+4. Start Minecraft — the config file will be created automatically.
 
-Controller checks run only after vanilla accepts a natural slime spawn. Results are cached per loaded chunk and invalidated when a lever, slime block, or note block changes. Searches stop at the first active controller and never load chunks. Cache entries are discarded with their chunks; lever changes take effect on the next spawn check.
+---
 
-## Release notes
+## 🧱 Building from Source
 
-Version 1.0.5 targets the final Minecraft 26.3 release with Fabric Loader 0.19.5 and Fabric API 0.160.5+26.3 while retaining 26.2 compatibility. The temporary ticker diagnostic source files have been removed. Remove the old diagnostic JVM option if it is still present.
+```bash
+git clone https://github.com/SwordfishBE/DisableSlimeChunks.git
+cd DisableSlimeChunks
+chmod +x gradlew
+./gradlew build
+```
 
-Build with `./gradlew build`. Release artifacts are written to `build/releases/1.0.5/libs/`.
+The remapped mod jar is written to `build/libs/`.
 
-## License
+---
+
+## 📄 License
 
 Disable Slime Chunks is licensed under the GNU Affero General Public License, version 3. See [LICENSE](LICENSE) for the complete license text.
